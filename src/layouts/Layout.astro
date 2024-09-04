@@ -27,7 +27,11 @@ const { title } = Astro.props;
 		<slot />
 
 
- 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 		<script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+
+
 
 	</body>
 </html>
@@ -35,6 +39,48 @@ const { title } = Astro.props;
 
 
 <style>
+ #libchat_a184aaf0aaab779e6cc4ac225df55a42 .lci_chat_load {
+              width: 100%!important;
+            }
+
+
+/*--- Ask Us chat button ---*/
+// .lcs_slide_out {
+//   margin-top: 25%;
+// }
+
+.lcs_slide_out-r{
+  top: 40% !important;
+}
+
+.lcs_slide_out header a {
+  @include font-size(1.35rem !important);
+  font-weight: 400;
+  padding: 0.125em 1em!important;
+}
+@media only screen and (max-width: 576px) {
+  .lcs_slide_out header a {
+    @include font-size(1rem !important);
+  }
+}
+
+
+.lcs_slide_out.open header a {
+  padding: 0 0.5em!important;
+}
+
+.lcs_slide_out.open header a:before { 
+  content:'\00D7\00a0\00a0\00a0'; 
+  font-size: 1.25em;
+}
+
+#s-lch-header-actions button i.fa.fa-fw {
+  font-size: 24px;
+}
+
+
+
+
 	:root {
 		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
 		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);

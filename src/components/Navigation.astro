@@ -4,9 +4,9 @@
 ---
 
 <header class="site-header" role="banner">
-  <!--<div class="container collapse card card-body rounded-0" tabindex='-1' id="gSearch">
+  <div class="container collapse card card-body rounded-0" tabindex="-1" id="gSearch">
     <div class="gcse-search"></div>
-  </div>  -->
+  </div>
 
   <nav class="navbar navbar-expand-md module stripe-1 navbar-light" role="navigation">
     <!-- when folded -->
@@ -330,6 +330,36 @@
 
 
 
+  <!-- script for Google customized search -->
+  <!-- This is the new Google Custom Search Engine code. -->
+  <script is:inline src="https://cse.google.com/cse.js?cx=d11ec13d3a7b04466"></script> 
+  <script>
+    $(function () {
+      // var cx = '009740610740149956689:vgajvsbmghf'; This is the old one by July 13, 2022
+      // var gcse = document.createElement('script');
+      // gcse.type = 'text/javascript';
+      // gcse.async = true;
+      // gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      // var s = document.getElementsByTagName('script')[0];
+      // s.parentNode.insertBefore(gcse, s);
+
+      // Enlarge the magnify glass icon of Google Site Search Box
+      setTimeout(function(){
+        if ($('.gsc-search-button-v2 > svg')[0]!== undefined) {
+        $('.gsc-search-button-v2 > svg')[0].setAttribute("width","20");
+        $('.gsc-search-button-v2 > svg')[0].setAttribute("height","20");
+        }
+      },1000);
+    });
+    
+    $('.site-search-icon-control').click(function(){
+      $('#site-search-icon').toggleClass('bi-search');
+      $('#site-search-icon').toggleClass('bi-x-circle');
+      $('.bi-x-circle ~ span').text('Close');
+      $('.bi-search ~ span').text('Site Search');
+    });
+
+  </script>
 
 
 
@@ -522,6 +552,87 @@ width:300px;
   background-image: url("https://www.lib.miamioh.edu/images/CornerImages/LibraryCornerImg.png");
 }
 
+
+
+/*----Google website search-----*/
+/* Google Search inbox */
+td.gsc-input ,
+td.gsc-search-button  {
+  border: 0px !important;
+  padding: 0 !important;
+}
+.gsib_a{
+  padding:0px !important;
+
+}
+
+td.gsib_b {
+  display: none;
+}
+
+div.ad, div.adStd {
+  display: none;
+}
+
+div.gsc-adBlock{
+  display:none !important
+  }
+
+form.gsc-search-box {
+  font-size: 22px !important;
+}
+table.gsc-input{
+  margin-bottom: 0!important;
+}
+.gsc-selected-option-container{
+  max-width: 100% !important;
+}
+
+/* to kill ads */
+.gsc-control-cse {
+  background-color: none;
+  border: none !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  padding: 0 1em !important;
+}
+
+div.gsc-input-box {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#googleSCHLsearch {
+  background-color: $red;
+  color: white;
+}
+
+#gSearch{
+  width: 100%; 
+  min-width: 180px; 
+  background-color: $red;
+  border: 0px!important;
+}
+
+.gsc-input input[name="search"]{
+  height: 2em !important;
+  outline: 1px solid white !important;
+  outline-offset: 2px !important;
+}
+
+button.gsc-search-button, .gsc-search-button-v2 {
+  background-color: $red !important;
+  margin-left: 0.5rem !important;
+  border-color: $red !important;
+  padding: 0px 8px !important; 
+  outline: 1px solid white !important;
+  outline-offset: 2px !important;
+:hover{
+  background-color: $red !important;
+}
+}
+
+
 /**
  * 2.1 Header @media queries
  * ----------------------------------------------------------------------------
@@ -576,6 +687,7 @@ margin:0;
   }
   
 }
+
 
 @media screen and (min-width: 768px) {
   .site-header .nav-title {
