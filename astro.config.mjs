@@ -12,7 +12,7 @@ export default defineConfig({
   // },
   // Hybrid+adapter is required to support embedded Sanity Studio
   site: 'https://miamiohlibs.github.io',
-  base: 'astro-sanity',
+  base: '',
    build: {
      assets: 'astro',
    },
